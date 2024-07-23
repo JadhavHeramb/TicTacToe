@@ -75,10 +75,19 @@ public class TicTacToe {
 	{
 
 		while (!checkWinner()) {
+			
 			xEntry();
 			if (checkWinner()) {
 				System.out.println("Player X won the game");
 				break;
+			}
+			
+			{
+				if (ifDraw())
+				{
+					System.out.println("Game Over.");
+					System.exit(0);
+				}
 			}
 
 			{
@@ -88,9 +97,27 @@ public class TicTacToe {
 					break;
 				}
 			}
+			
+			{
+				if (ifDraw())
+				{
+					System.out.println("Game Over.");
+					System.exit(0);
+				}
+			}
+			
+			
 		}
+		
 	}
 
+	public boolean ifDraw()
+	{
+		return 
+				(num1 != '1') && (num2 != '2') && (num3 != '3') && (num4 != '4') &&
+			    (num5 != '5') && (num6 != '6') && (num7 != '7') && (num8 != '8') && (num9 != '9') ;
+	}
+	
 	public void xEntry() // Logic for Player X to add entry on Backboard
 
 	{
